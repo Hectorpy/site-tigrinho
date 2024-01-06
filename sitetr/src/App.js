@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import './App.css';
 import './styles.scss';
@@ -14,6 +14,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const sliderRef = useRef();
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -23,6 +25,16 @@ function App() {
     arrows: true,
     afterChange: (index) => setActiveIndex(index),
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        sliderRef.current.slickNext();
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const renderDots = () => {
     return Array.from({ length: 6 }).map((_, index) => (
@@ -67,6 +79,7 @@ function App() {
         <div className="CarouselContainer">
           <Slider
             {...sliderSettings}
+            ref={sliderRef}
             afterChange={(index) => setActiveIndex(index)}
           >
             <div>
@@ -100,5 +113,5 @@ function App() {
     </div>
   );
 }
-// 1 2 3
+
 export default App;
