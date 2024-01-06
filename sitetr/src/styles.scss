@@ -1,0 +1,229 @@
+$primary-color: #00B06F;
+$font-family: 'Nunito', sans-serif;
+$gradient-start: #003525;
+$gradient-end: #000000;
+$button-color: #00BE5C;
+$additional-area-background: #014633; 
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+.App {
+    text-align: center;
+    font-family: $font-family;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        .Gradient {
+            height: auto;
+        }
+
+        .Image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .AdditionalArea {
+            height: auto;
+        }
+
+        .CarouselContainer {
+            width: 100%;
+            height: auto;
+        }
+
+        .CarouselImage {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.Header {
+    background-color: $primary-color;
+    padding: 6px;
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+
+.Header-text {
+    font-weight: normal;
+}
+
+.Header-text strong {
+    font-weight: bold;
+}
+
+.Gradient {
+    background: linear-gradient(to bottom, $gradient-start, $gradient-end);
+    height: 660px; 
+}
+
+.Image {
+    max-width: 680px;
+    max-height: 100%;
+}
+
+.Content-text {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    @media (max-width: 768px){
+        font-size: 20px;
+    }
+}
+
+.Button {
+    background-color: $button-color;
+    color: white;
+    padding: 10px 25px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+    animation: pulse 1.5s infinite; 
+
+    &:hover {
+        background-color: darken($button-color, 10%); 
+        animation: none; 
+    }
+    @media (max-width: 768px) {
+        position: relative;
+        top: -10px;
+        padding: 5px 10px;
+    }
+}
+.Button2 {
+    background-color: $button-color;
+    color: white;
+    padding: 10px 25px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+    animation: pulse 1.5s infinite; 
+    position: relative;
+    top: -100px;
+
+    &:hover {
+        background-color: darken($button-color, 10%); 
+        animation: none; 
+    }
+    @media (max-width: 768px) {
+        position: relative;
+        top: -10px;
+        padding: 5px 10px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.AdditionalArea {
+    background-color: $additional-area-background;
+    padding: 1px;
+    height: 860px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AdditionalArea-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    @media (max-width: 768px){
+        font-size: 24px;
+    }
+}
+
+// Estilos para o carrossel
+.CarouselImage {
+    max-width: 250px;
+    max-height: 200%;
+    margin: 0 auto;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 180%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white; 
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.CarouselContainer {
+    width: 680px; 
+    margin: 0 auto; 
+    height: 1800px; 
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000; 
+}
+
+.DotsContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -120px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.dot.active {
+    background-color: white;
+}
+
+.Footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+
+    @media (max-width: 768px) {
+
+    }
+}
