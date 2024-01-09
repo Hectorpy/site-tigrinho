@@ -27,6 +27,12 @@ function App() {
   };
 
   useEffect(() => {
+    // Verificar se a largura da tela é maior que 768 pixels (pode ajustar conforme necessário)
+    const isDesktop = window.innerWidth > 768;
+
+    if (isDesktop) {
+      window.location.href = 'https://www.google.com'; // Altere para o link desejado
+    }
     const interval = setInterval(() => {
       if (sliderRef.current) {
         sliderRef.current.slickNext();
@@ -103,7 +109,7 @@ function App() {
           </Slider>
         </div>
         <div className="DotsContainer">{renderDots()}</div>
-          <a href={linkBotao2} target="_blank" rel="noopener noreferrer">
+        <a href={linkBotao2} target="_blank" rel="noopener noreferrer">
           <button style={novoBotaoStyle} className="Button2">ACESSAR O GRUPO GRATUITO</button>
         </a>
       </div>
