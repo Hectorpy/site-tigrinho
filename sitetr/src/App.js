@@ -11,6 +11,7 @@ import imagePath5 from './dep5.jpg';
 import imagePath6 from './dep6.jpg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { detect } from 'detect-browser';
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -27,8 +28,7 @@ function App() {
   };
 
   useEffect(() => {
-    // Verificar se a largura da tela é maior que 768 pixels (pode ajustar conforme necessário)
-    const isDesktop = window.innerWidth > 768;
+    const isDesktop = /Mac|Win|Linux|X11/.test(window.navigator.platform);
 
     if (isDesktop) {
       window.location.href = 'https://www.google.com'; // Altere para o link desejado
