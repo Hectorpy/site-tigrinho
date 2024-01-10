@@ -11,7 +11,7 @@ import imagePath5 from './dep5.jpg';
 import imagePath6 from './dep6.jpg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { detect } from 'detect-browser';
+
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);

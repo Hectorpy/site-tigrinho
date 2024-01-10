@@ -43,13 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "resolve": {
-    "fallback": {
-      "os": false
-    }
-  },
-  "resolutions": {
-    "os": "os-browserify@0.3.0"
   }
 }
