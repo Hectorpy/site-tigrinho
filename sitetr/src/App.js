@@ -28,9 +28,10 @@ function App() {
   };
 
   useEffect(() => {
-    const isDesktop = /Mac|Win|Linux|X11/.test(window.navigator.platform);
+    const userAgent = navigator.userAgent;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
-    if (isDesktop) {
+    if (!isMobile) {
       window.location.href = 'https://www.google.com'; // Altere para o link desejado
     }
     const interval = setInterval(() => {
