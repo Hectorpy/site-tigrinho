@@ -1,0 +1,8 @@
+{
+    "deploy": {
+      "web": {
+        "command": "npm start",
+        "dist": "build"
+      }
+    }
+  }
